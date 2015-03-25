@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<title>Drag</title>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<style type="text/css">
+
+section{
+
+	text-align: center;
+
+}
+
+section li{
+
+	width: 100px;
+
+	height: 60px;
+
+	line-height: 60px;
+
+	margin: 10px;
+
+	list-style: none;
+	
+	border: 1px solid red;
+
+}
+
+</style>
+
+<section>
+	
+	<ul>
+
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+		<li>E</li>
+		<li>F</li>
+		<li>G</li>
+		<li>H</li>
+
+	</ul>
+
+</section>
+
+<script type="text/javascript" main="manifest" src="./js/jquery.min.js"></script>
+<script type="text/javascript" main="manifest" src="./js/jquery.drag.js"></script>
+<script type="text/javascript" main="manifest" src="./js/jquery.drag.sort.js"></script>
+
+<script type="text/javascript">
+
+$.dragSort({
+
+	// 施法区域
+	caster: $('section ul'),
+
+	// 受法区域
+	sucker: $('section ul'),
+
+	// 操作对象
+	items: $('section li'),
+
+	// 距离
+	distance: 80,
+
+	// Start End Enter Over Drop
+
+	// 回调 - 开始
+	onStart: function( item, e ){
+		console.log('start');
+	},
+
+	// 回调 - 结束
+	onEnd: function( item, e ){
+		console.log('end');
+	},
+
+});
+
+</script>
+
+</body>
+</html>
